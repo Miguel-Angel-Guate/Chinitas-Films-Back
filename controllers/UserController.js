@@ -1,8 +1,8 @@
 const User = require('../models/User')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {jwt_auth ,  FRONT_URL} = require('../config/keys')
-
+const { jwt_auth } = require('../config/keys')
+const FRONT_URL = process.env.NODE_ENV === 'production'?'':'http://localhost:3001'
 const transporter = require('../config/nodemailer');
 
 

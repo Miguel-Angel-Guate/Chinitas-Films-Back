@@ -1,7 +1,7 @@
 require('./config/mongoose');
 const express = require('express')
 const morgan = require('morgan');
-// import usersRouter from './routes/users.js';
+const  usersRouter = require ('./routes/users.js');
 // import productsRouter from './routes/products.js';
 // import ordersRouter from './routes/orders.js';
 const app = express();
@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.json()) //parsea el json que mandamos y crea el req.body 
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 // app.use('/products', productsRouter);
 // app.use('/orders', ordersRouter);
 app.listen(PORT, () => console.log('Server running on port ' + PORT));

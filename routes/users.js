@@ -1,6 +1,11 @@
 const  router = require('express').Router();
 const  express = require('express');
+const UserController = require('../controllers/UserController');
 
+router.get('/', UserController.getAll);
+router.post('/REGISTER', UserController.register);
+// router.post('/login', UserController.login);
+// router.get('/confirm/:emailToken', UserController.confirm);
 
 
 
