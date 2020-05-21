@@ -2,7 +2,7 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { jwt_auth } = require('../config/keys')
-const FRONT_URL = process.env.NODE_ENV === 'production'?'':'http://localhost:3001'
+const FRONT_URL = process.env.NODE_ENV === 'production'?'':'http://localhost:3000'
 const transporter = require('../config/nodemailer');
 
 
@@ -29,7 +29,7 @@ const UserController = {
                      const url = FRONT_URL + 'users/confirm/' + emailToken;
                      await transporter.sendMail({
                             to: email,
-                            subject: 'Validate your account in Ginzo colchones please',
+                            subject: 'Validate your account in Chapos Films  please',
                             html: `
                          <h3>Welcome ${
 req.body.name
